@@ -5,8 +5,6 @@ RUN apt-get update && apt-get install -y \
     git wget && \
     apt-get clean
 
-# Establece directorio de trabajo
-WORKDIR /workspace
 
 # Clona ComfyUI
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git && \
@@ -24,10 +22,10 @@ RUN mkdir -p ComfyUI/models/clip \
     ComfyUI/models/upscale_models
 
 # Copia scripts
-COPY start.sh /workspace/start.sh
-COPY start-pod.sh /workspace/start-pod.sh
-RUN chmod +x /workspace/start.sh /workspace/start-pod.sh
+COPY start.sh /start.sh
+COPY start-pod.sh /start-pod.sh
+RUN chmod +x /start.sh /start-pod.sh
 
 EXPOSE 3000
 
-CMD ["/workspace/start.sh"]
+CMD ["/start-pod.sh"]
