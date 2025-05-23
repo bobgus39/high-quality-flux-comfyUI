@@ -15,13 +15,7 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git && \
 
 # Instala nodos personalizados
 RUN cd ComfyUI/custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager && \
-    git clone https://github.com/welltop-cn/ComfyUI-TeaCache.git && \
-    cd ComfyUI-TeaCache && pip install --no-cache-dir -r requirements.txt && cd .. && \
-    git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git && \
-    git clone https://github.com/yolain/ComfyUI-Easy-Use.git && \
-    cd ComfyUI-Easy-Use && pip install --no-cache-dir -r requirements.txt
-
+    git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager 
 # Crea carpetas para modelos
 RUN mkdir -p ComfyUI/models/clip \
     ComfyUI/models/vae \
