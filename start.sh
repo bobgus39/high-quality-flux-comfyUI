@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /workspace/ComfyUI
+cd ComfyUI
 
 python3 main.py --listen 0.0.0.0 --port 3000
